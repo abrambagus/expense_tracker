@@ -1,5 +1,6 @@
 import 'package:expense_tracker/models/expense.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ExpenseItem extends StatelessWidget {
   const ExpenseItem(this.expense, {super.key});
@@ -22,7 +23,8 @@ class ExpenseItem extends StatelessWidget {
             ),
             Row(
               children: [
-                Text("Rp. ${expense.amount.toStringAsFixed(2)}"),
+                Text(
+                    "Rp. ${NumberFormat('#,##0.00', 'id_ID').format(expense.amount)}"),
                 const Spacer(),
                 Row(
                   children: [
