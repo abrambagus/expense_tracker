@@ -11,50 +11,59 @@ var kDarkColorSchme = ColorScheme.fromSeed(
 );
 
 void main() {
-  runApp(MaterialApp(
-    darkTheme: ThemeData.dark().copyWith(
-      colorScheme: kDarkColorSchme,
-      cardTheme: const CardTheme().copyWith(
-        color: kDarkColorSchme.secondaryContainer,
-        margin: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 8,
-        ),
-      ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: kDarkColorSchme.primaryContainer,
-          foregroundColor: kDarkColorSchme.onPrimaryContainer,
-        ),
-      ),
-    ),
-    theme: ThemeData().copyWith(
-      colorScheme: kColorScheme,
-      appBarTheme: const AppBarTheme().copyWith(
-        backgroundColor: kColorScheme.onPrimaryContainer,
-        foregroundColor: kColorScheme.primaryContainer,
-      ),
-      cardTheme: const CardTheme().copyWith(
-        color: kColorScheme.secondaryContainer,
-        margin: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 8,
-        ),
-      ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: kColorScheme.primaryContainer,
-        ),
-      ),
-      textTheme: ThemeData().textTheme.copyWith(
-            titleLarge: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: kColorScheme.onSecondaryContainer,
-              fontSize: 14,
-            ),
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  // ]).then(
+  //   (fn) {
+  runApp(
+    MaterialApp(
+      darkTheme: ThemeData.dark().copyWith(
+        colorScheme: kDarkColorSchme,
+        cardTheme: const CardTheme().copyWith(
+          color: kDarkColorSchme.secondaryContainer,
+          margin: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
           ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kDarkColorSchme.primaryContainer,
+            foregroundColor: kDarkColorSchme.onPrimaryContainer,
+          ),
+        ),
+      ),
+      theme: ThemeData().copyWith(
+        colorScheme: kColorScheme,
+        appBarTheme: const AppBarTheme().copyWith(
+          backgroundColor: kColorScheme.onPrimaryContainer,
+          foregroundColor: kColorScheme.primaryContainer,
+        ),
+        cardTheme: const CardTheme().copyWith(
+          color: kColorScheme.secondaryContainer,
+          margin: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kColorScheme.primaryContainer,
+          ),
+        ),
+        textTheme: ThemeData().textTheme.copyWith(
+              titleLarge: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: kColorScheme.onSecondaryContainer,
+                fontSize: 14,
+              ),
+            ),
+      ),
+      // themeMode: ThemeMode.system,
+      home: const Expenses(),
     ),
-    // themeMode: ThemeMode.system,
-    home: const Expenses(),
-  ));
+  );
+  //   },
+  // );
 }
